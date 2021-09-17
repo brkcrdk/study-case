@@ -2,7 +2,7 @@ import Header from "./Header";
 
 function Layout({ children }) {
   return (
-    <div>
+    <div data-testid="layout">
       <Header />
       {children}
     </div>
