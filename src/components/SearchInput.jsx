@@ -5,7 +5,7 @@ function SearchInput(props) {
   return (
     <Wrapper>
       <Icon name="search" size={18} />
-      <CustomInput {...props} />
+      <CustomInput {...props} data-testid="search-input" />
     </Wrapper>
   );
 }
@@ -28,6 +28,6 @@ const CustomInput = styled.input`
   font-size: 15px;
   background: #eee;
   height: 100%;
-  padding-left: 56px;
+  padding: 0 56px;
   border-radius: 100px;
 `;
