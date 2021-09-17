@@ -3,15 +3,15 @@ import { Icon } from "components";
 
 function SearchInput(props) {
   return (
-    <Wrapper>
+    <SeearchInputWrapper>
       <Icon name="search" size={18} />
       <CustomInput {...props} data-testid="search-input" />
-    </Wrapper>
+    </SeearchInputWrapper>
   );
 }
 export default SearchInput;
 
-const Wrapper = styled.div`
+const SeearchInputWrapper = styled.div`
   position: relative;
   width: 100%;
   max-width: 695px;
