@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { Container } from "components";
+import { Container, SearchInput } from "components";
 
 function Header() {
   return (
     <HeaderContainer>
       <img src="/hepsiburada-logo.svg" alt="Logo" />
-      <input />
+      <SearchInput placeholder="25 milyon’dan fazla ürün içerisinde ara" />
       <button>Sepetim</button>
     </HeaderContainer>
   );
