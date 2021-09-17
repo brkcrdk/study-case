@@ -15,6 +15,7 @@ export default Header;
 const HeaderContainer = styled(Container)`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 24px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.35);
 `;
