@@ -13,6 +13,12 @@ const GlobalStyle = createGlobalStyle`
 		text-decoration: none;
 		cursor: pointer;
 	}
+  ul{
+    list-style: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+  }
 	button {
     border: none;
     background: none;
