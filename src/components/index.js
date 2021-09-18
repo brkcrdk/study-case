@@ -5,3 +5,5 @@ export { default as Cart } from "./Cart/Cart";
 export { default as Header } from "./Header";
 export { default as ProductsHeader } from "./ProductsHeader";
 export { default as Dropdown } from "./Dropdown";
+export { default as Navigation } from "./Navigation/Navigation";
+export { default as ProductContainer } from "./ProductContainer";
