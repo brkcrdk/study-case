@@ -21,7 +21,7 @@ const CardContent = styled.ul`
   min-width: 360px;
   background: #fff;
   padding: 21px;
-  border: ${`1px solid ${colors.inputGray}`};
+  border: ${`1px solid ${colors.lightGray}`};
   border-radius: 4px;
   display: none;
   ${(p) =>

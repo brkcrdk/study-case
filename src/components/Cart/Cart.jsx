@@ -34,10 +34,10 @@ const CartText = styled.span`
   align-items: center;
   height: 48px;
   width: 120px;
-  color: ${colors.inputGray};
+  color: ${colors.lightGray};
   cursor: pointer;
   background: #fff;
-  border: ${`1px solid ${colors.inputGray}`};
+  border: ${`1px solid ${colors.lightGray}`};
   border-radius: 4px;
   ${(p) =>
     p.isHover &&
