@@ -39,7 +39,7 @@ const PriceInformations = styled.div`
   }
   .discount {
     margin-left: 4px;
-    color: ${colors.red};
+    color: ${colors.danger};
     font-size: 12px;
   }
 `;
