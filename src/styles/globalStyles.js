@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
 	}
   html{
     font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
 	a {
 		text-decoration: none;
