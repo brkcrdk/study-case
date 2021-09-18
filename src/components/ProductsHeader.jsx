@@ -1,14 +1,9 @@
 import styled from "styled-components";
 import { colors } from "theme";
 import { Dropdown } from "components";
-
+import navOptions from "navOptions";
 function ProductsHeader() {
-  const sortingOptions = [
-    { label: "En Düşük Fiyat", value: "priceASC" },
-    { label: "En Yüksek Fiyat", value: "priceDESC" },
-    { label: "En Yeniler (A>Z)", value: "ASC" },
-    { label: "En Yeniler (Z>A)", value: "DESC" },
-  ];
+  const sortingOptions = navOptions[1].options;
   return (
     <ProductsHeaderWrapper>
       <SearchedQuery>
