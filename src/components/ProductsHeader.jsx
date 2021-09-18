@@ -17,7 +17,11 @@ function ProductsHeader() {
           Aranan Kelime: <strong>iphone 11</strong>
         </span>
       </SearchedQuery>
-      <Dropdown placeholder="Sıralama" options={sortingOptions} />
+      <Dropdown
+        placeholder="Sıralama"
+        options={sortingOptions}
+        onChange={(e) => console.log(e.target.value)}
+      />
     </ProductsHeaderWrapper>
   );
 }
