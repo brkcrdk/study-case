@@ -1,4 +1,13 @@
 const findCounts = (dataSet, searchKey = "") => {
+  if (
+    !Array.isArray(dataSet) ||
+    !dataSet ||
+    dataSet.length === 0 ||
+    !searchKey
+  ) {
+    return [];
+  }
+
   const test = [];
   const filteredOptions = [
     ...new Set(dataSet.map((product) => product[searchKey])),
