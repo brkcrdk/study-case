@@ -7,3 +7,4 @@ export { default as ProductsHeader } from "./ProductsHeader";
 export { default as Dropdown } from "./Dropdown";
 export { default as Navigation } from "./Navigation/Navigation";
 export { default as ProductContainer } from "./ProductContainer";
+export { default as Pagination } from "./Pagination";

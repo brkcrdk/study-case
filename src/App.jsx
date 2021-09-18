@@ -5,6 +5,7 @@ import {
   Container,
   Navigation,
   ProductContainer,
+  Pagination,
 } from "components";
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
         <ProductSection>
           <Navigation />
           <ProductContainer />
+          <span />
+          <Pagination />
         </ProductSection>
       </Container>
     </main>
@@ -27,4 +30,5 @@ export default App;
 const ProductSection = styled.section`
   display: grid;
   grid-template-columns: 2fr 10fr;
+  margin-bottom: 32px;
 `;
