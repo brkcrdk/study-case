@@ -14,7 +14,7 @@ function Header() {
 }
 export default Header;
 
-const HeaderWrapper = styled.div`
+const HeaderWrapper = styled.header`
   border-bottom: 1px solid rgba(0, 0, 0, 0.35);
 `;
 

@@ -1,9 +1,10 @@
 import { Header } from "components";
+
 function App() {
   return (
-    <div data-testid="app">
+    <main data-testid="app">
       <Header />
-    </div>
+    </main>
   );
 }
 
