@@ -31,6 +31,7 @@ const SectionTitle = styled.span`
 const NavContainer = styled.ul`
   margin-top: 20px;
   li {
+    font-size: 14px;
     color: ${colors.navText};
     margin: 6px 0;
     a {
