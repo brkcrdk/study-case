@@ -3,16 +3,24 @@ import { colors } from "theme";
 
 function Dropdown({ placeholder = "Dropdown", options = [] }) {
   return (
-    <SelectWrapper name="choice" placeholder="xxx">
-      <option value="" selected disabled hidden>
+    <SelectWrapper
+      name="choice"
+      data-testid="dropdown"
+      defaultValue="defaultValue"
+    >
+      <option value="defaultValue" disabled hidden>
         {placeholder}
       </option>
       {options.length > 0 ? (
-        options.map((option) => (
-          <option value={option.value}>{option.label}</option>
+        options.map((option, index) => (
+          <option value={option.value} key={`option-${index}`}>
+            {option.label}
+          </option>
         ))
       ) : (
-        <option disabled>Seçenek Yok</option>
+        <option disabled data-testid="dropdown-noOption">
+          Seçenek Yok
+        </option>
       )}
     </SelectWrapper>
   );
