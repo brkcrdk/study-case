@@ -2,7 +2,6 @@ import data from "./data.json";
 import { findCounts } from "utils";
 
 const test = findCounts(data, "color");
-console.log({ test });
 
 const navOptions = [
   {
