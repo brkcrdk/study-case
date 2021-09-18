@@ -4,7 +4,7 @@ import App from "../App";
 describe("Layout componenti testleri", () => {
   test("Layout render oluyor", () => {
     render(<App />);
-    const linkElement = screen.getByTestId("layout");
+    const linkElement = screen.getByTestId("app");
     expect(linkElement).toBeInTheDocument();
   });
 });
