@@ -1,7 +1,18 @@
+import { useContext } from "react";
+import { ModalContext } from "store";
 import styled from "styled-components";
 import { colors } from "theme";
+import DeleteModal from "./DeleteModal";
 
 function CartItem() {
+  const { openModal, closeModal } = useContext(ModalContext);
+
+  const handleModal = () =>
+    openModal({
+      header: "Ürünü silmek istediğinize emin misiniz?",
+      content: <DeleteModal closeModal={closeModal} />,
+    });
+
   return (
     <CartItemWrapper>
       <img src="/product-images/iphone-black.png" alt="black-iphone" />
@@ -9,7 +20,7 @@ function CartItem() {
         <span>
           Apple iPhone 11 Pro Max iPhone 11 Pro Max iPhone 11 (Max 2 Line)
         </span>
-        <button>Kaldır</button>
+        <button onClick={handleModal}>Kaldır</button>
       </ItemInformations>
     </CartItemWrapper>
   );
@@ -44,8 +55,8 @@ const ItemInformations = styled.div`
   button {
     width: 50px;
     height: 18px;
-    color: ${colors.red};
-    border: 1px solid ${colors.red};
+    color: ${colors.danger};
+    border: 1px solid ${colors.danger};
     border-radius: 4px;
     font-size: 10px;
   }
