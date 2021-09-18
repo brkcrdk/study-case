@@ -5,6 +5,7 @@ const options = [
   { value: "option2", label: "Seçenek 2" },
   { value: "option3", label: "Seçenek 3" },
 ];
+const mockedOnChange = jest.fn();
 
 it("Dropdown componenti render oluyor ve propları doğru çalışıyor", () => {
   render(<Dropdown />);
@@ -17,7 +18,13 @@ it("Dropdown componenti render oluyor ve propları doğru çalışıyor", () => 
 
 describe("Dropdow component testleri", () => {
   beforeEach(() => {
-    render(<Dropdown placeholder="Seçenekler" options={options} />);
+    render(
+      <Dropdown
+        placeholder="Seçenekler"
+        options={options}
+        onChange={mockedOnChange}
+      />
+    );
   });
 
   it("Placeholder çalışıyor.", () => {
@@ -31,5 +38,14 @@ describe("Dropdow component testleri", () => {
       expect(dropdownElement).toHaveTextContent(option.label);
     });
     expect(screen.queryByTestId("dropdown-noOption")).toBeFalsy();
+  });
+
+  it("onChange eventi doğru bir şekilde çalışıyor", () => {
+    const dropdownElement = screen.getByTestId("dropdown");
+    fireEvent.change(dropdownElement, {
+      target: { value: "option 1" },
+    });
+    expect(dropdownElement).toHaveTextContent("Seçenek 1");
+    expect(mockedOnChange).toHaveBeenCalledTimes(1);
   });
 });
