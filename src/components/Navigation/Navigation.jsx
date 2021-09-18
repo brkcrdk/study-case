@@ -18,6 +18,5 @@ function Navigation() {
 export default Navigation;
 
 const NavigationWrapper = styled.nav`
-  width: 224px;
   margin-top: 19px;
 `;
