@@ -1,7 +1,14 @@
 import styled from "styled-components";
 import { colors } from "theme";
+import { Dropdown } from "components";
 
 function ProductsHeader() {
+  const sortingOptions = [
+    { label: "En Düşük Fiyat", value: "priceASC" },
+    { label: "En Yüksek Fiyat", value: "priceDESC" },
+    { label: "En Yeniler (A>Z)", value: "ASC" },
+    { label: "En Yeniler (Z>A)", value: "DESC" },
+  ];
   return (
     <ProductsHeaderWrapper>
       <SearchedQuery>
@@ -10,7 +17,7 @@ function ProductsHeader() {
           Aranan Kelime: <strong>iphone 11</strong>
         </span>
       </SearchedQuery>
-      <span>Dropdown</span>
+      <Dropdown placeholder="Sıralama" options={sortingOptions} />
     </ProductsHeaderWrapper>
   );
 }
