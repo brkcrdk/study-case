@@ -1,9 +1,14 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Cart } from "components";
+import { Providers } from "store";
 
 describe("Cart component testleri", () => {
   beforeEach(() => {
-    render(<Cart />);
+    render(
+      <Providers>
+        <Cart />
+      </Providers>
+    );
   });
 
   it("Cart componenti render oluyor", () => {
