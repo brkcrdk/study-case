@@ -4,7 +4,7 @@ import { FilterProvider } from "./filterStore";
 function Providers({ children }) {
   return (
     <FilterProvider>
-      <ModalProvider>{children}</ModalProvider>;
+      <ModalProvider>{children}</ModalProvider>
     </FilterProvider>
   );
 }
