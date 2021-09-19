@@ -1,12 +1,17 @@
 import styled from "styled-components";
 import { colors } from "theme";
 
-function Dropdown({ placeholder = "Dropdown", options = [], ...props }) {
+function Dropdown({
+  placeholder = "Dropdown",
+  options = [],
+  defaultValue,
+  ...props
+}) {
   return (
     <SelectWrapper
       name="choice"
       data-testid="dropdown"
-      defaultValue="defaultValue"
+      defaultValue={defaultValue || "defaultValue"}
       {...props}
     >
       <option value="defaultValue" disabled hidden>
