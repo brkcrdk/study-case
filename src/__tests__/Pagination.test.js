@@ -1,12 +1,34 @@
+import { useState } from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Pagination } from "components";
 import { Providers } from "store";
+
+const PaginationTest = () => {
+  const [active, setActive] = useState(1);
+
+  const handleNext = () => {
+    if (active < 12) return setActive(active + 1);
+  };
+  const handlePrev = () => {
+    if (active > 1) return setActive(active - 1);
+  };
+
+  return (
+    <Pagination
+      activePage={active}
+      pageCount={12}
+      handleNext={handleNext}
+      handleGoTo={(e) => setActive(e)}
+      handlePrev={handlePrev}
+    />
+  );
+};
 
 describe("Dropdow component testleri", () => {
   beforeEach(() => {
     render(
       <Providers>
-        <Pagination />
+        <PaginationTest />
       </Providers>
     );
   });
