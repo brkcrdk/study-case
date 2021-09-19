@@ -1,13 +1,10 @@
 import styled from "styled-components";
 import ProductCard from "./ProductCard/ProductCard";
-import { usePagination } from "hooks";
 
-function ProductContainer() {
-  const { data } = usePagination();
-
+function ProductContainer({ products }) {
   return (
-    <ProductContainerWrapper>
-      {data.map((product, index) => (
+    <ProductContainerWrapper data-testid="product-container">
+      {products.map((product, index) => (
         <ProductCard key={`product-${index}`} productInfo={product} />
       ))}
     </ProductContainerWrapper>
