@@ -1,7 +1,12 @@
 import { ModalProvider } from "./modalStore";
+import { FilterProvider } from "./filterStore";
 
 function Providers({ children }) {
-  return <ModalProvider>{children}</ModalProvider>;
+  return (
+    <FilterProvider>
+      <ModalProvider>{children}</ModalProvider>;
+    </FilterProvider>
+  );
 }
 
 export default Providers;
