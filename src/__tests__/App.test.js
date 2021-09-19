@@ -3,7 +3,7 @@ import App from "../App";
 import { Providers } from "store";
 
 describe("Layout componenti testleri", () => {
-  test("Layout render oluyor", () => {
+  it("Layout render oluyor", () => {
     render(
       <Providers>
         <App />
