@@ -1,17 +1,10 @@
 import data from "./data.json";
 import { findCounts } from "utils";
 
-const test = findCounts(data, "color");
-
 const navOptions = [
   {
     title: "Renk",
-    options: [
-      { label: "Lacivert", value: "lacivert" },
-      { label: "Sarı", value: "sarı" },
-      { label: "Siyah", value: "siyah" },
-      { label: "Beyaz", value: "beyaz" },
-    ],
+    options: findCounts(data, "color"),
   },
   {
     title: "Sıralama",
@@ -24,15 +17,7 @@ const navOptions = [
   },
   {
     title: "Marka",
-    options: [
-      { label: "Samsung", value: "samsung" },
-      { label: "Nokia", value: "nokia" },
-      { label: "Apple", value: "apple" },
-      { label: "LG", value: "lg" },
-      { label: "Huawei", value: "huawei" },
-      { label: "Xiamoi", value: "xiaomi" },
-      { label: "General Mobile", value: "generalMobile" },
-    ],
+    options: findCounts(data, "brand"),
   },
 ];
 
