@@ -9,8 +9,7 @@ function NavigationSection({ title, options = [] }) {
         {options.map((option) => (
           <li key={option.value}>
             <a>
-              {option.label}
-              {option.count && ` (${option.count})`}
+              {option.label} {option.count && ` (${option.count})`}
             </a>
           </li>
         ))}
