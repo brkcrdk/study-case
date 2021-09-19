@@ -9,8 +9,9 @@ function Pagination() {
     usePagination();
 
   return (
-    <PaginationWrapper>
+    <PaginationWrapper data-testid="pagination">
       <PageItem
+        data-testid="pagination-prev"
         className="prev"
         disabled={activePage === 1}
         onClick={handlePrev}
@@ -19,6 +20,7 @@ function Pagination() {
       </PageItem>
       {[...Array(pageCount).keys()].map((page) => (
         <PageItem
+          data-testid="pagination-item"
           className={activePage === page + 1 ? "active" : ""}
           key={`pagination-page-${page}`}
           onClick={() => handleGoTo(page + 1)}
@@ -27,6 +29,7 @@ function Pagination() {
         </PageItem>
       ))}
       <PageItem
+        data-testid="pagination-next"
         className="next"
         disabled={activePage === pageCount}
         onClick={handleNext}
