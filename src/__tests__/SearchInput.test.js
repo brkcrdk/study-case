@@ -1,22 +1,28 @@
 import { useState } from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { SearchInput } from "components";
-
+import { Providers } from "store";
 function Search() {
   const [searchVal, setSearchVal] = useState("");
 
   return (
-    <SearchInput
-      placeholder="Aranacak kriteri yazınız."
-      value={searchVal}
-      onChange={(e) => setSearchVal(e.target.value)}
-    />
+    <Providers>
+      <SearchInput
+        placeholder="Aranacak kriteri yazınız."
+        value={searchVal}
+        onChange={(e) => setSearchVal(e.target.value)}
+      />
+    </Providers>
   );
 }
 
 describe("SearchInput componenti testleri", () => {
   it("Input render oluyor", () => {
-    render(<SearchInput />);
+    render(
+      <Providers>
+        <SearchInput />
+      </Providers>
+    );
     const searchInput = screen.getByTestId("search-input");
     expect(searchInput).toBeInTheDocument();
   });
