@@ -7,8 +7,10 @@ import {
   ProductContainer,
   Pagination,
 } from "components";
+import { usePagination } from "hooks";
 
 function App() {
+  const { pageCount, data } = usePagination();
   return (
     <main data-testid="app">
       <Header />
@@ -16,9 +18,15 @@ function App() {
         <ProductsHeader />
         <ProductSection>
           <Navigation />
-          <ProductContainer />
+          {data.length ? (
+            <ProductContainer />
+          ) : (
+            <span data-testid="nothing-found">
+              Aradığınız sonuç bulunamadı.
+            </span>
+          )}
           <span />
-          <Pagination />
+          {pageCount > 1 && <Pagination />}
         </ProductSection>
       </Container>
     </main>
