@@ -1,22 +1,12 @@
-import { useContext } from "react";
 import styled, { css } from "styled-components";
 import { Icon } from "components";
 import { colors } from "theme";
-import { paginate } from "utils";
-import productData from "../data.json";
-import { FilterContext } from "store";
+
+import { usePagination } from "hooks";
 
 function Pagination() {
-  const { activePage, onPageChange } = useContext(FilterContext);
-  const { pageCount } = paginate({ data: productData });
-
-  const handleNext = () => {
-    if (activePage !== pageCount) return onPageChange(activePage + 1);
-  };
-
-  const handlePrev = () => {
-    if (activePage !== 1) return onPageChange(activePage - 1);
-  };
+  const { activePage, pageCount, handleNext, handlePrev, handleGoTo } =
+    usePagination();
 
   return (
     <PaginationWrapper>
@@ -27,11 +17,11 @@ function Pagination() {
       >
         <Icon size={8} name="left-icon" />
       </PageItem>
-      {[...Array(pageCount).keys()].map((page, index) => (
+      {[...Array(pageCount).keys()].map((page) => (
         <PageItem
           className={activePage === page + 1 ? "active" : ""}
           key={`pagination-page-${page}`}
-          onClick={() => onPageChange(page + 1)}
+          onClick={() => handleGoTo(page + 1)}
         >
           {page + 1}
         </PageItem>
