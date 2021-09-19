@@ -1,13 +1,17 @@
+import { useContext } from "react";
 import styled from "styled-components";
-import paginatedData from "../productData";
+import { paginate } from "utils";
 import ProductCard from "./ProductCard/ProductCard";
+import { FilterContext } from "store";
 
 function ProductContainer() {
-  const { data } = paginatedData(1);
+  const { activePage } = useContext(FilterContext);
+  const { data } = paginate(activePage);
+
   return (
     <ProductContainerWrapper>
       {data.map((product, index) => (
-        <ProductCard key={`product-${index}`} />
+        <ProductCard key={`product-${index}`} productInfo={product} />
       ))}
     </ProductContainerWrapper>
   );
