@@ -5,7 +5,7 @@ import ProductInformation from "./ProductInformation";
 
 function ProductCard({ productInfo }) {
   const [isHovered, setIsHovered] = useState(false);
-  const { image } = productInfo;
+  const { image, name, discount, realPrice, brand, color } = productInfo;
   return (
     <ProductCardWrapper
       onMouseEnter={() => setIsHovered(true)}
@@ -14,13 +14,18 @@ function ProductCard({ productInfo }) {
     >
       <ProductImage isHovered={isHovered} src={image} />
       <ProductDetails>
-        <ProductTitle>
-          Apple iPhone 11 Pro Max iPhone 11 Pro Max iPhone 11 (Max 2 Line)
-        </ProductTitle>
+        <ProductTitle>{name}</ProductTitle>
         {isHovered ? (
           <BuyButton>Sepete Ekle</BuyButton>
         ) : (
-          <ProductInformation />
+          <ProductInformation
+            productInformation={{
+              discount,
+              realPrice,
+              brand,
+              color,
+            }}
+          />
         )}
       </ProductDetails>
     </ProductCardWrapper>
@@ -53,9 +58,6 @@ const ProductDetails = styled.section`
   display: grid;
   margin: 0 auto;
   max-width: 230px;
-  .netPrice {
-    font-size: 14px;
-  }
 `;
 
 const ProductTitle = styled.h4`
@@ -64,6 +66,7 @@ const ProductTitle = styled.h4`
   color: ${colors.darkGray};
   font-weight: 400;
   font-size: 12px;
+  height: 28px;
 `;
 
 const BuyButton = styled.button`
