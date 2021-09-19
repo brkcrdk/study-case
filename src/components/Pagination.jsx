@@ -3,11 +3,12 @@ import styled, { css } from "styled-components";
 import { Icon } from "components";
 import { colors } from "theme";
 import { paginate } from "utils";
+import productData from "../data.json";
 import { FilterContext } from "store";
 
 function Pagination() {
   const { activePage, onPageChange } = useContext(FilterContext);
-  const { pageCount } = paginate();
+  const { pageCount } = paginate({ data: productData });
 
   const handleNext = () => {
     if (activePage !== pageCount) return onPageChange(activePage + 1);

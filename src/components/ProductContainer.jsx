@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import { paginate } from "utils";
-import ProductCard from "./ProductCard/ProductCard";
 import { FilterContext } from "store";
+import { paginate } from "utils";
+import productData from "../data.json";
+import ProductCard from "./ProductCard/ProductCard";
 
 function ProductContainer() {
   const { activePage } = useContext(FilterContext);
-  const { data } = paginate(activePage);
+  const { data } = paginate({ page: activePage, data: productData });
 
   return (
     <ProductContainerWrapper>
