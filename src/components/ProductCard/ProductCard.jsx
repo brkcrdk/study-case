@@ -3,18 +3,16 @@ import styled from "styled-components";
 import { colors, lineClamp } from "theme";
 import ProductInformation from "./ProductInformation";
 
-function ProductCard() {
+function ProductCard({ productInfo }) {
   const [isHovered, setIsHovered] = useState(false);
+  const { image } = productInfo;
   return (
     <ProductCardWrapper
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       isHovered={isHovered}
     >
-      <ProductImage
-        isHovered={isHovered}
-        src="/product-images/iphone-black.png"
-      />
+      <ProductImage isHovered={isHovered} src={image} />
       <ProductDetails>
         <ProductTitle>
           Apple iPhone 11 Pro Max iPhone 11 Pro Max iPhone 11 (Max 2 Line)
@@ -43,6 +41,9 @@ const ProductCardWrapper = styled.article`
 
 const ProductImage = styled.img`
   padding: 3px 15px;
+  width: 256px;
+  height: 332px;
+  object-fit: contain;
   ${sharedStyle};
   border-color: ${(p) =>
     p.isHovered ? "transparent" : colors.productImageBorder};
