@@ -3,7 +3,7 @@
     "name": "Apple iPhone 11 Pro Maxi Phone 11 Pro Max iPhone 11 (Max 2 Line)",
     "brand": "Apple",
     "color": "Siyah",
-    "realPrice": 124,
+    "realPrice": 1240,
     "discount": 12,
     "image": "/product-images/iphone-black"
   },
@@ -40,12 +40,20 @@
     "image": "/product-images/iphone-blue.png"
   },
   {
-    "name": "Huawei Mate Pro 12",
+    "name": "Huawei P40",
     "brand": "Huawei",
     "color": "Beyaz",
     "realPrice": 1124,
     "discount": 12,
-    "image": "/product-images/iphone-white.png"
+    "image": "/product-images/huawei.png"
+  },
+  {
+    "name": "Huawei P40",
+    "brand": "Huawei",
+    "color": "Sarı",
+    "realPrice": 1124,
+    "discount": 12,
+    "image": "/product-images/huawei2.png"
   },
   {
     "name": "Huawei 10",
@@ -53,7 +61,7 @@
     "color": "Siyah",
     "realPrice": 1240,
     "discount": 0,
-    "image": "/product-images/iphone-black.png"
+    "image": "/product-images/huawei.png"
   },
   {
     "name": "Xiaomi Mi A2 Lite",
@@ -61,7 +69,7 @@
     "color": "Siyah",
     "realPrice": 1000,
     "discount": 10,
-    "image": "/product-images/iphone-black.png"
+    "image": "/product-images/xiaomi.png"
   },
   {
     "name": "Xiaomi Mi A2 Pro",
@@ -69,7 +77,7 @@
     "color": "Beyaz",
     "realPrice": 1000,
     "discount": 10,
-    "image": "/product-images/iphone-white.png"
+    "image": "/product-images/xiaomi-2.png"
   },
   {
     "name": "Apple iPhone 7",
@@ -93,7 +101,7 @@
     "color": "Siyah",
     "realPrice": 1124,
     "discount": 12,
-    "image": "/product-images/iphone-black.png"
+    "image": "/product-images/huawei2.png"
   },
   {
     "name": "Xiaomi Pro",
@@ -101,7 +109,7 @@
     "color": "Lacivert",
     "realPrice": 600,
     "discount": 2,
-    "image": "/product-images/iphone-blue.png"
+    "image": "/product-images/xiaomi.png"
   },
   {
     "name": "Apple iPhone 11",
@@ -117,6 +125,214 @@
     "color": "Siyah",
     "realPrice": 600,
     "discount": 2,
-    "image": "/product-images/iphone-black.png"
+    "image": "/product-images/xiaomi-2.png"
+  },
+  {
+    "name": "Apple iPhone 11 Pro Maxi Phone 11 Pro Max iPhone 11 (Max 2 Line)",
+    "brand": "Apple",
+    "color": "Siyah",
+    "realPrice": 1240,
+    "discount": 12,
+    "image": "/product-images/iphone-black"
+  },
+  {
+    "name": "Apple iPhone 11",
+    "brand": "Apple",
+    "color": "Sarı",
+    "realPrice": 500,
+    "discount": 10,
+    "image": "/product-images/iphone-yellow.png"
+  },
+  {
+    "name": "Apple iPhone 11",
+    "brand": "Apple",
+    "color": "Kırmızı",
+    "realPrice": 500,
+    "discount": 10,
+    "image": "/product-images/iphone-red.png"
+  },
+  {
+    "name": "Samsung Note 2",
+    "brand": "Samsung",
+    "color": "Beyaz",
+    "realPrice": 300,
+    "discount": 3,
+    "image": "/product-images/iphone-white.png"
+  },
+  {
+    "name": "Apple iPhone 12 Pro",
+    "brand": "Apple",
+    "color": "Lacivert",
+    "realPrice": 1240,
+    "discount": 5,
+    "image": "/product-images/iphone-blue.png"
+  },
+  {
+    "name": "Huawei P40",
+    "brand": "Huawei",
+    "color": "Beyaz",
+    "realPrice": 1124,
+    "discount": 12,
+    "image": "/product-images/huawei.png"
+  },
+  {
+    "name": "Huawei P40",
+    "brand": "Huawei",
+    "color": "Sarı",
+    "realPrice": 1124,
+    "discount": 12,
+    "image": "/product-images/huawei2.png"
+  },
+  {
+    "name": "Huawei 10",
+    "brand": "Huawei",
+    "color": "Siyah",
+    "realPrice": 1240,
+    "discount": 0,
+    "image": "/product-images/huawei.png"
+  },
+  {
+    "name": "Xiaomi Mi A2 Lite",
+    "brand": "Xiaomi",
+    "color": "Siyah",
+    "realPrice": 1000,
+    "discount": 10,
+    "image": "/product-images/xiaomi.png"
+  },
+  {
+    "name": "Xiaomi Mi A2 Pro",
+    "brand": "Xiaomi",
+    "color": "Beyaz",
+    "realPrice": 1000,
+    "discount": 10,
+    "image": "/product-images/xiaomi-2.png"
+  },
+  {
+    "name": "Apple iPhone 7",
+    "brand": "Apple",
+    "color": "Lacivert",
+    "realPrice": 500,
+    "discount": 3,
+    "image": "/product-images/iphone-blue.png"
+  },
+  {
+    "name": "Apple 7",
+    "brand": "Apple",
+    "color": "Beyaz",
+    "realPrice": 500,
+    "discount": 3,
+    "image": "/product-images/iphone-white.png"
+  },
+  {
+    "name": "Huawei Mate Pro 12",
+    "brand": "Huawei",
+    "color": "Siyah",
+    "realPrice": 1124,
+    "discount": 12,
+    "image": "/product-images/huawei2.png"
+  },
+  {
+    "name": "Xiaomi Pro",
+    "brand": "Xiaomi",
+    "color": "Lacivert",
+    "realPrice": 600,
+    "discount": 2,
+    "image": "/product-images/xiaomi.png"
+  },
+  {
+    "name": "Apple iPhone 11",
+    "brand": "Apple",
+    "color": "Sarı",
+    "realPrice": 500,
+    "discount": 10,
+    "image": "/product-images/iphone-yellow.png"
+  },
+  {
+    "name": "Xiaomi Pro",
+    "brand": "Xiaomi",
+    "color": "Siyah",
+    "realPrice": 600,
+    "discount": 2,
+    "image": "/product-images/xiaomi-2.png"
+  },
+  {
+    "name": "Xiaomi Mi A2 Lite",
+    "brand": "Xiaomi",
+    "color": "Siyah",
+    "realPrice": 1000,
+    "discount": 10,
+    "image": "/product-images/xiaomi.png"
+  },
+  {
+    "name": "Xiaomi Mi A2 Pro",
+    "brand": "Xiaomi",
+    "color": "Beyaz",
+    "realPrice": 1000,
+    "discount": 10,
+    "image": "/product-images/xiaomi-2.png"
+  },
+  {
+    "name": "Apple iPhone 7",
+    "brand": "Apple",
+    "color": "Lacivert",
+    "realPrice": 500,
+    "discount": 3,
+    "image": "/product-images/iphone-blue.png"
+  },
+  {
+    "name": "Apple 7",
+    "brand": "Apple",
+    "color": "Beyaz",
+    "realPrice": 500,
+    "discount": 3,
+    "image": "/product-images/iphone-white.png"
+  },
+  {
+    "name": "Huawei Mate Pro 12",
+    "brand": "Huawei",
+    "color": "Siyah",
+    "realPrice": 1124,
+    "discount": 12,
+    "image": "/product-images/huawei2.png"
+  },
+  {
+    "name": "Apple 7",
+    "brand": "Apple",
+    "color": "Beyaz",
+    "realPrice": 500,
+    "discount": 3,
+    "image": "/product-images/iphone-white.png"
+  },
+  {
+    "name": "Huawei Mate Pro 12",
+    "brand": "Huawei",
+    "color": "Siyah",
+    "realPrice": 1124,
+    "discount": 12,
+    "image": "/product-images/huawei2.png"
+  },
+  {
+    "name": "Xiaomi Pro",
+    "brand": "Xiaomi",
+    "color": "Lacivert",
+    "realPrice": 600,
+    "discount": 2,
+    "image": "/product-images/xiaomi.png"
+  },
+  {
+    "name": "Apple iPhone 11",
+    "brand": "Apple",
+    "color": "Sarı",
+    "realPrice": 500,
+    "discount": 10,
+    "image": "/product-images/iphone-yellow.png"
+  },
+  {
+    "name": "Xiaomi Pro",
+    "brand": "Xiaomi",
+    "color": "Siyah",
+    "realPrice": 600,
+    "discount": 2,
+    "image": "/product-images/xiaomi-2.png"
   }
 ]
