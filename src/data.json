@@ -5,7 +5,7 @@
     "color": "Siyah",
     "realPrice": 1240,
     "discount": 12,
-    "image": "/product-images/iphone-black"
+    "image": "/product-images/iphone-black.png"
   },
   {
     "name": "Apple iPhone 11",
@@ -53,7 +53,7 @@
     "color": "Sarı",
     "realPrice": 1124,
     "discount": 12,
-    "image": "/product-images/huawei2.png"
+    "image": "/product-images/huawei-2.png"
   },
   {
     "name": "Huawei 10",
@@ -101,7 +101,7 @@
     "color": "Siyah",
     "realPrice": 1124,
     "discount": 12,
-    "image": "/product-images/huawei2.png"
+    "image": "/product-images/huawei-2.png"
   },
   {
     "name": "Xiaomi Pro",
@@ -133,7 +133,7 @@
     "color": "Siyah",
     "realPrice": 1240,
     "discount": 12,
-    "image": "/product-images/iphone-black"
+    "image": "/product-images/iphone-black.png"
   },
   {
     "name": "Apple iPhone 11",
@@ -181,7 +181,7 @@
     "color": "Sarı",
     "realPrice": 1124,
     "discount": 12,
-    "image": "/product-images/huawei2.png"
+    "image": "/product-images/huawei-2.png"
   },
   {
     "name": "Huawei 10",
@@ -229,7 +229,7 @@
     "color": "Siyah",
     "realPrice": 1124,
     "discount": 12,
-    "image": "/product-images/huawei2.png"
+    "image": "/product-images/huawei-2.png"
   },
   {
     "name": "Xiaomi Pro",
@@ -293,7 +293,7 @@
     "color": "Siyah",
     "realPrice": 1124,
     "discount": 12,
-    "image": "/product-images/huawei2.png"
+    "image": "/product-images/huawei-2.png"
   },
   {
     "name": "Apple 7",
@@ -309,7 +309,7 @@
     "color": "Siyah",
     "realPrice": 1124,
     "discount": 12,
-    "image": "/product-images/huawei2.png"
+    "image": "/product-images/huawei-2.png"
   },
   {
     "name": "Xiaomi Pro",
