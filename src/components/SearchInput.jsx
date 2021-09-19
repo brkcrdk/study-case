@@ -1,11 +1,19 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import { FilterContext } from "store";
 import { Icon } from "components";
 
 function SearchInput(props) {
+  const { search, onSearch } = useContext(FilterContext);
   return (
     <SeearchInputWrapper>
       <Icon name="search" size={18} />
-      <CustomInput {...props} data-testid="search-input" />
+      <CustomInput
+        {...props}
+        value={search}
+        onChange={(e) => onSearch(e.target.value)}
+        data-testid="search-input"
+      />
     </SeearchInputWrapper>
   );
 }
