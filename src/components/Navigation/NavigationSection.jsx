@@ -1,13 +1,20 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import { FilterContext } from "store";
 import { colors } from "theme";
 
 function NavigationSection({ title, options = [] }) {
+  const { sort, onSortChange } = useContext(FilterContext);
   return (
     <NavigationSectionWrapper>
       <SectionTitle>{title}</SectionTitle>
       <NavContainer>
         {options.map((option) => (
-          <li key={option.value}>
+          <li
+            key={option.value}
+            className={sort === option.value ? "active" : ""}
+            onClick={() => onSortChange(option.value)}
+          >
             <a>
               {option.label} {option.count && ` (${option.count})`}
             </a>
@@ -36,6 +43,10 @@ const NavContainer = styled.ul`
     font-size: 14px;
     color: ${colors.navText};
     margin: 6px 0;
+    &.active {
+      font-weight: 500;
+      color: ${colors.mainOrange};
+    }
     a {
       &:hover {
         color: ${colors.mainOrange};
