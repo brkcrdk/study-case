@@ -10,7 +10,8 @@ import {
 import { usePagination } from "hooks";
 
 function App() {
-  const { pageCount, data } = usePagination();
+  const { data, activePage, pageCount, handleNext, handlePrev, handleGoTo } =
+    usePagination();
   return (
     <main data-testid="app">
       <Header />
@@ -19,14 +20,22 @@ function App() {
         <ProductSection>
           <Navigation />
           {data.length ? (
-            <ProductContainer />
+            <ProductContainer products={data} />
           ) : (
             <span data-testid="nothing-found">
               Aradığınız sonuç bulunamadı.
             </span>
           )}
           <span />
-          {pageCount > 1 && <Pagination />}
+          {pageCount > 1 && (
+            <Pagination
+              activePage={activePage}
+              pageCount={pageCount}
+              handleNext={handleNext}
+              handlePrev={handlePrev}
+              handleGoTo={(goTo) => handleGoTo(goTo)}
+            />
+          )}
         </ProductSection>
       </Container>
     </main>

@@ -2,12 +2,13 @@ import styled, { css } from "styled-components";
 import { Icon } from "components";
 import { colors } from "theme";
 
-import { usePagination } from "hooks";
-
-function Pagination() {
-  const { activePage, pageCount, handleNext, handlePrev, handleGoTo } =
-    usePagination();
-
+function Pagination({
+  activePage = 1,
+  pageCount = 2,
+  handlePrev,
+  handleGoTo,
+  handleNext,
+}) {
   return (
     <PaginationWrapper data-testid="pagination">
       <PageItem
