@@ -7,7 +7,7 @@ const FilterProvider = ({ children }) => {
   const [data, setData] = useState(initialData);
   const [activePage, setActivePage] = useState(1);
   const [search, setSearch] = useState("");
-  const [sort, setSort] = useState(null);
+  const [sort, setSort] = useState("ASC");
 
   const onSearch = (searchValue) => {
     setSearch(searchValue);

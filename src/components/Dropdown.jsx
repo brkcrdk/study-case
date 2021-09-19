@@ -8,12 +8,7 @@ function Dropdown({
   ...props
 }) {
   return (
-    <SelectWrapper
-      name="choice"
-      data-testid="dropdown"
-      defaultValue={defaultValue || "defaultValue"}
-      {...props}
-    >
+    <SelectWrapper name="choice" data-testid="dropdown" {...props}>
       <option value="defaultValue" disabled hidden>
         {placeholder}
       </option>

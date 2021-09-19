@@ -21,7 +21,6 @@ function ProductsHeader() {
       <Dropdown
         placeholder="Sıralama"
         options={sortingOptions}
-        defaultValue={sort}
         value={sort}
         onChange={(e) => onSortChange(e.target.value)}
       />
