@@ -1,16 +1,22 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import { FilterContext } from "store";
 import { colors } from "theme";
 import { Dropdown } from "components";
 import navOptions from "navOptions";
+
 function ProductsHeader() {
+  const { search } = useContext(FilterContext);
   const sortingOptions = navOptions[1].options;
   return (
     <ProductsHeaderWrapper>
       <SearchedQuery>
         <h3>iPhone iOS cep telefonu</h3>
-        <span>
-          Aranan Kelime: <strong>iphone 11</strong>
-        </span>
+        {search.length > 2 && (
+          <span>
+            Aranan Kelime: <strong>{search}</strong>
+          </span>
+        )}
       </SearchedQuery>
       <Dropdown
         placeholder="Sıralama"
