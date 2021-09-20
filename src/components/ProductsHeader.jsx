@@ -6,7 +6,7 @@ import { Dropdown } from "components";
 import navOptions from "navOptions";
 
 function ProductsHeader() {
-  const { search, sort, onSortChange } = useContext(FilterContext);
+  const { search, sort, onFilterChange } = useContext(FilterContext);
   const sortingOptions = navOptions[1].options;
   return (
     <ProductsHeaderWrapper>
@@ -22,7 +22,12 @@ function ProductsHeader() {
         placeholder="Sıralama"
         options={sortingOptions}
         value={sort}
-        onChange={(e) => onSortChange(e.target.value)}
+        onChange={(e) =>
+          onFilterChange({
+            value: e.target.value,
+            filterType: "sort",
+          })
+        }
       />
     </ProductsHeaderWrapper>
   );
