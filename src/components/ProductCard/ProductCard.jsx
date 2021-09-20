@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styled from "styled-components";
 import { colors, lineClamp } from "theme";
+import { CartContext } from "store";
 import ProductInformation from "./ProductInformation";
 
 function ProductCard({ productInfo }) {
   const [isHovered, setIsHovered] = useState(false);
-  const { image, name, discount, realPrice, brand, color } = productInfo;
+  const { image, name, discount, realPrice, brand, color, uuid } = productInfo;
+  const { addToCart, cart } = useContext(CartContext);
+  const isExist = cart.find((cartItem) => cartItem.uuid === uuid);
+
   return (
     <ProductCardWrapper
       onMouseEnter={() => setIsHovered(true)}
@@ -16,7 +20,9 @@ function ProductCard({ productInfo }) {
       <ProductDetails>
         <ProductTitle>{name}</ProductTitle>
         {isHovered ? (
-          <BuyButton>Sepete Ekle</BuyButton>
+          <BuyButton disabled={isExist} onClick={() => addToCart(productInfo)}>
+            {isExist ? "Bu ürünü sepete ekleyemezsiniz" : "Sepete Ekle"}
+          </BuyButton>
         ) : (
           <ProductInformation
             productInformation={{
