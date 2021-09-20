@@ -1,5 +1,6 @@
 export const handleSearch = (state, action, initialData) => {
-  const sharedProps = { ...state, search: action.payload, activePage: 1 };
+  const sharedProps = { ...state, search: action.payload };
+
   if (action.payload.length > 2) {
     const filteredData = state.data.filter((product) => {
       const productName = product.name.toLowerCase();
@@ -8,6 +9,7 @@ export const handleSearch = (state, action, initialData) => {
     });
     return {
       ...sharedProps,
+      activePage: 1,
       data: filteredData,
     };
   } else {
