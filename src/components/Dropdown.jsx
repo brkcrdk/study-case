@@ -1,17 +1,10 @@
 import styled from "styled-components";
 import { colors } from "theme";
 
-function Dropdown({
-  placeholder = "Dropdown",
-  options = [],
-  defaultValue,
-  ...props
-}) {
+function Dropdown({ placeholder = "Dropdown", options = [], ...props }) {
   return (
     <SelectWrapper name="choice" data-testid="dropdown" {...props}>
-      <option value="defaultValue" disabled hidden>
-        {placeholder}
-      </option>
+      <option hidden>{placeholder}</option>
       {options.length > 0 ? (
         options.map((option, index) => (
           <option value={option.value} key={`option-${index}`}>
