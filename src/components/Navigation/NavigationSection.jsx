@@ -4,7 +4,7 @@ import { FilterContext } from "store";
 import { colors } from "theme";
 
 function NavigationSection({ title, filterType, options = [] }) {
-  const { sort, onSortChange } = useContext(FilterContext);
+  const { sort, onFilterChange } = useContext(FilterContext);
   return (
     <NavigationSectionWrapper>
       <SectionTitle>{title}</SectionTitle>
@@ -14,7 +14,7 @@ function NavigationSection({ title, filterType, options = [] }) {
             key={option.value}
             className={sort === option.value ? "active" : ""}
             onClick={() =>
-              onSortChange({
+              onFilterChange({
                 value: option.value,
                 filterType,
               })

@@ -1,5 +1,6 @@
 import { createContext, useReducer } from "react";
 import initialData from "../data.json";
+import { onSortChange } from "./filterMethods";
 
 const FilterContext = createContext();
 
@@ -9,6 +10,8 @@ const FilterProvider = ({ children }) => {
     activePage: 1,
     search: "",
     sort: "",
+    color: [],
+    brand: [],
   };
 
   const reducer = (state, action) => {
@@ -29,34 +32,7 @@ const FilterProvider = ({ children }) => {
         return { ...state, activePage: action.payload };
       }
       case "onSortChange": {
-        if (action.payload === state.sort) {
-          return { ...state, sort: "", data: initialData };
-        }
-        if (action.payload === "ASC") {
-          const ASC = state.data
-            .slice()
-            .sort((a, b) => a.name.localeCompare(b.name));
-          return { ...state, data: ASC, sort: action.payload };
-        }
-        if (action.payload === "DESC") {
-          const DESC = state.data
-            .slice()
-            .sort((a, b) => a.name.localeCompare(b.name));
-          return { ...state, data: DESC, sort: action.payload };
-        }
-        if (action.payload === "priceASC") {
-          const priceASC = state.data
-            .slice()
-            .sort((a, b) => a.realPrice - b.realPrice);
-          return { ...state, data: priceASC, sort: action.payload };
-        }
-        if (action.payload === "priceDESC") {
-          const priceDESC = state.data
-            .slice()
-            .sort((a, b) => b.realPrice - a.realPrice);
-          return { ...state, data: priceDESC, sort: action.payload };
-        }
-        return { ...state, sort: "", data: initialData };
+        return onSortChange(state, action, initialData);
       }
       default: {
         return state;
@@ -74,9 +50,12 @@ const FilterProvider = ({ children }) => {
     dispatch({ type: "onPageChange", payload: goTo });
   };
 
-  const onSortChange = ({ filterType, value }) => {
+  const onFilterChange = ({ filterType, value }) => {
     if (filterType === "sort") {
       dispatch({ type: "onSortChange", payload: value });
+    }
+    if (filterType === "color") {
+      dispatch({ type: "onColorChange", payload: value });
     }
   };
 
@@ -87,7 +66,7 @@ const FilterProvider = ({ children }) => {
     activePage: test.activePage,
     onSearch,
     onPageChange,
-    onSortChange,
+    onFilterChange,
   };
 
   return (
