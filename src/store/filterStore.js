@@ -1,6 +1,6 @@
 import { createContext, useReducer } from "react";
 import initialData from "../data.json";
-import { onSortChange } from "./filterMethods";
+import { handleSortChange, handleSearch } from "./filterMethods";
 
 const FilterContext = createContext();
 
@@ -17,22 +17,13 @@ const FilterProvider = ({ children }) => {
   const reducer = (state, action) => {
     switch (action.type) {
       case "onSearch": {
-        if (action.payload.length > 2) {
-          const filteredData = state.data.filter((product) => {
-            const productName = product.name.toLowerCase();
-            const expectedBrand = action.payload.toLowerCase();
-            return productName.includes(expectedBrand);
-          });
-          return { ...state, search: action.payload, data: filteredData };
-        } else {
-          return { ...state, search: action.payload, data: initialData };
-        }
+        return handleSearch(state, action, initialData);
       }
       case "onPageChange": {
         return { ...state, activePage: action.payload };
       }
       case "onSortChange": {
-        return onSortChange(state, action, initialData);
+        return handleSortChange(state, action, initialData);
       }
       default: {
         return state;
