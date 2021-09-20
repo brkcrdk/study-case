@@ -4,10 +4,12 @@ import { findCounts } from "utils";
 const navOptions = [
   {
     title: "Renk",
+    filterType: "color",
     options: findCounts(data, "color"),
   },
   {
     title: "Sıralama",
+    filterType: "sort",
     options: [
       { label: "En Düşük Fiyat", value: "priceASC" },
       { label: "En Yüksek Fiyat", value: "priceDESC" },
@@ -17,6 +19,7 @@ const navOptions = [
   },
   {
     title: "Marka",
+    filterType: "brand",
     options: findCounts(data, "brand"),
   },
 ];
