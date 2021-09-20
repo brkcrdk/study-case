@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { colors } from "theme";
 
-function ItemCount() {
-  return <Count>4</Count>;
+function ItemCount({ count = 0 }) {
+  return <Count>{count}</Count>;
 }
 export default ItemCount;
 
