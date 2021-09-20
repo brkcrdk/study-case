@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import styled from "styled-components";
 import { colors } from "theme";
+import { CartContext } from "store";
 
-function DeleteModal({ closeModal }) {
+function DeleteModal({ closeModal, uuid }) {
+  const { removeFromCart } = useContext(CartContext);
   return (
     <DeleteModalWrapper>
       <span>
@@ -16,7 +19,15 @@ function DeleteModal({ closeModal }) {
         <button className="reject" onClick={closeModal}>
           Hayır
         </button>
-        <button className="accept">Evet</button>
+        <button
+          className="accept"
+          onClick={() => {
+            removeFromCart(uuid);
+            return closeModal();
+          }}
+        >
+          Evet
+        </button>
       </Controls>
     </DeleteModalWrapper>
   );
