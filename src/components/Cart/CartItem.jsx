@@ -4,22 +4,20 @@ import styled from "styled-components";
 import { colors } from "theme";
 import DeleteModal from "./DeleteModal";
 
-function CartItem() {
+function CartItem({ image, name, uuid }) {
   const { openModal, closeModal } = useContext(ModalContext);
 
   const handleModal = () =>
     openModal({
       header: "Ürünü silmek istediğinize emin misiniz?",
-      content: <DeleteModal closeModal={closeModal} />,
+      content: <DeleteModal closeModal={closeModal} uuid={uuid} />,
     });
 
   return (
     <CartItemWrapper>
-      <img src="/product-images/iphone-black.png" alt="black-iphone" />
+      <img src={image} alt={name} />
       <ItemInformations>
-        <span>
-          Apple iPhone 11 Pro Max iPhone 11 Pro Max iPhone 11 (Max 2 Line)
-        </span>
+        <span>{name}</span>
         <button onClick={handleModal}>Kaldır</button>
       </ItemInformations>
     </CartItemWrapper>
