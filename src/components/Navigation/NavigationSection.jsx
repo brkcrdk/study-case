@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FilterContext } from "store";
 import { colors } from "theme";
 
-function NavigationSection({ title, options = [] }) {
+function NavigationSection({ title, filterType, options = [] }) {
   const { sort, onSortChange } = useContext(FilterContext);
   return (
     <NavigationSectionWrapper>
@@ -13,7 +13,12 @@ function NavigationSection({ title, options = [] }) {
           <li
             key={option.value}
             className={sort === option.value ? "active" : ""}
-            onClick={() => onSortChange(option.value)}
+            onClick={() =>
+              onSortChange({
+                value: option.value,
+                filterType,
+              })
+            }
           >
             <a>
               {option.label} {option.count && ` (${option.count})`}

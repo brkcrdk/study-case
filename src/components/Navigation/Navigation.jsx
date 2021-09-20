@@ -9,6 +9,7 @@ function Navigation() {
         <NavigationSection
           title={option.title}
           options={option.options}
+          filterType={option.filterType}
           key={option.title}
         />
       ))}
