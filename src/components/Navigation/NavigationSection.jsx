@@ -4,7 +4,15 @@ import { FilterContext } from "store";
 import { colors } from "theme";
 
 function NavigationSection({ title, filterType, options = [] }) {
-  const { sort, onFilterChange } = useContext(FilterContext);
+  const { sort, color, brand, onFilterChange } = useContext(FilterContext);
+  const isActive = (value) => {
+    if (filterType === "sort" && value === sort) {
+      return "active";
+    }
+    if (color.includes(value) || brand.includes(value)) {
+      return "active";
+    }
+  };
   return (
     <NavigationSectionWrapper>
       <SectionTitle>{title}</SectionTitle>
@@ -12,7 +20,7 @@ function NavigationSection({ title, filterType, options = [] }) {
         {options.map((option) => (
           <li
             key={option.value}
-            className={sort === option.value ? "active" : ""}
+            className={isActive(option.value)}
             onClick={() =>
               onFilterChange({
                 value: option.value,

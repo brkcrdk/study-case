@@ -1,6 +1,11 @@
 import { createContext, useReducer } from "react";
 import initialData from "../data.json";
-import { handleSortChange, handleSearch } from "./filterMethods";
+import {
+  handleSortChange,
+  handleSearch,
+  handleColorChange,
+  handleBrandChange,
+} from "./filterMethods";
 
 const FilterContext = createContext();
 
@@ -25,36 +30,45 @@ const FilterProvider = ({ children }) => {
       case "onSortChange": {
         return handleSortChange(state, action, initialData);
       }
+      case "onColorChange": {
+        return handleColorChange(state, action);
+      }
+      case "onBrandChange": {
+        return handleBrandChange(state, action);
+      }
       default: {
         return state;
       }
     }
   };
 
-  const [test, dispatch] = useReducer(reducer, initialStore);
+  const [store, dispatch] = useReducer(reducer, initialStore);
 
-  const onSearch = (searchValue) => {
+  const onSearch = (searchValue) =>
     dispatch({ type: "onSearch", payload: searchValue });
-  };
 
-  const onPageChange = (goTo) => {
+  const onPageChange = (goTo) =>
     dispatch({ type: "onPageChange", payload: goTo });
-  };
 
   const onFilterChange = ({ filterType, value }) => {
     if (filterType === "sort") {
-      dispatch({ type: "onSortChange", payload: value });
+      return dispatch({ type: "onSortChange", payload: value });
     }
     if (filterType === "color") {
-      dispatch({ type: "onColorChange", payload: value });
+      return dispatch({ type: "onColorChange", payload: value });
+    }
+    if (filterType === "brand") {
+      return dispatch({ type: "onBrandChange", payload: value });
     }
   };
 
   const values = {
-    data: test.data,
-    search: test.search,
-    sort: test.sort,
-    activePage: test.activePage,
+    data: store.data,
+    search: store.search,
+    sort: store.sort,
+    activePage: store.activePage,
+    color: store.color,
+    brand: store.brand,
     onSearch,
     onPageChange,
     onFilterChange,
