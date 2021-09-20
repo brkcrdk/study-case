@@ -10,8 +10,12 @@ import {
 const FilterContext = createContext();
 
 const FilterProvider = ({ children }) => {
-  const [data, setData] = useState(initialData);
+  const modifiedData = initialData.map((product, index) => ({
+    ...product,
+    uuid: `product-${index}`,
+  }));
 
+  const [data, setData] = useState(modifiedData);
   const initialStore = {
     data,
     activePage: 1,

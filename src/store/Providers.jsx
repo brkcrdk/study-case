@@ -1,10 +1,13 @@
 import { ModalProvider } from "./modalStore";
 import { FilterProvider } from "./filterStore";
+import { CartProvider } from "./cartStore";
 
 function Providers({ children }) {
   return (
     <FilterProvider>
-      <ModalProvider>{children}</ModalProvider>
+      <CartProvider>
+        <ModalProvider>{children}</ModalProvider>
+      </CartProvider>
     </FilterProvider>
   );
 }
