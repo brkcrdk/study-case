@@ -46,27 +46,29 @@ export const handleSortChange = (state, action, initialData) => {
 
 export const handleColorChange = (state, action) => {
   const isExist = state.color.includes(action.payload);
-
   let newColors = [];
   if (isExist) {
-    const filteredData = state.color.filter((c) => c !== action.payload);
+    const filteredData = state.color.filter(
+      (color) => color !== action.payload
+    );
     newColors = filteredData;
   } else {
     newColors = state.color.concat(action.payload);
   }
-
-  return { ...state, color: newColors };
+  return { ...state, color: newColors, activePage: 1 };
 };
 
 export const handleBrandChange = (state, action) => {
   const isExist = state.brand.includes(action.payload);
   let newBrand = [];
   if (isExist) {
-    const filteredData = state.brand.filter((c) => c !== action.payload);
+    const filteredData = state.brand.filter(
+      (brand) => brand !== action.payload
+    );
     newBrand = filteredData;
   } else {
     newBrand = state.brand.concat(action.payload);
   }
 
-  return { ...state, brand: newBrand };
+  return { ...state, brand: newBrand, activePage: 1 };
 };

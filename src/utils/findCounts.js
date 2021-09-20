@@ -8,19 +8,19 @@ const findCounts = (dataSet, searchKey = "") => {
     return [];
   }
 
-  const test = [];
+  const counts = [];
   const filteredOptions = [
     ...new Set(dataSet.map((product) => product[searchKey])),
   ];
   filteredOptions.forEach((option) => {
     const count = dataSet.filter((product) => product[searchKey] === option);
-    return test.push({
+    return counts.push({
       label: option,
       value: option.toLowerCase(),
       count: count.length,
     });
   });
-  return test;
+  return counts;
 };
 
 export default findCounts;

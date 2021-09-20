@@ -69,25 +69,21 @@ const FilterProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const handleFilter = (data, colors, brand) => {
-      const newState = data.filter((d) => {
-        const colorName = d.color.toLowerCase();
-        const brandName = d.brand.toLowerCase();
-        if (colors.length && !brand.length) {
-          return colors?.includes(colorName);
-        }
-        if (brand.length && !colors.length) {
-          return brand?.includes(brandName);
-        }
-        if (brand.length && colors.length) {
-          return colors?.includes(colorName) && brand?.includes(brandName);
-        }
-        return initialData;
-      });
-      return newState;
-    };
-
-    const newState = handleFilter(store.data, store.color, store.brand);
+    const { color, brand, data } = store;
+    const newState = data.filter((product) => {
+      const colorName = product.color.toLowerCase();
+      const brandName = product.brand.toLowerCase();
+      if (color.length && !brand.length) {
+        return color?.includes(colorName);
+      }
+      if (brand.length && !color.length) {
+        return brand?.includes(brandName);
+      }
+      if (brand.length && color.length) {
+        return color?.includes(colorName) && brand?.includes(brandName);
+      }
+      return initialData;
+    });
     setData(newState);
   }, [store]);
 
