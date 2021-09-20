@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styled, { css } from "styled-components";
 import { colors } from "theme";
+import { CartContext } from "store";
 import CartContent from "./CartContent";
 import ItemCount from "./ItemCount";
 
 function Cart({ ...props }) {
   const [isHover, setIsHover] = useState(false);
+  const { cart } = useContext(CartContext);
 
   return (
     <CartWrapper
@@ -15,8 +17,8 @@ function Cart({ ...props }) {
       {...props}
     >
       <CartText isHover={isHover}>Sepetim</CartText>
-      <ItemCount />
-      <CartContent isHover={isHover} />
+      <ItemCount count={cart.length} />
+      <CartContent isHover={isHover} cart={cart} />
     </CartWrapper>
   );
 }
