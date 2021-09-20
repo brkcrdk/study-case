@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useState, useReducer, useEffect } from "react";
 import initialData from "../data.json";
 import {
   handleSortChange,
@@ -10,8 +10,10 @@ import {
 const FilterContext = createContext();
 
 const FilterProvider = ({ children }) => {
+  const [data, setData] = useState(initialData);
+
   const initialStore = {
-    data: initialData,
+    data,
     activePage: 1,
     search: "",
     sort: "",
@@ -62,8 +64,31 @@ const FilterProvider = ({ children }) => {
     }
   };
 
+  useEffect(() => {
+    const handleFilter = (data, colors, brand) => {
+      const newState = data.filter((d) => {
+        const colorName = d.color.toLowerCase();
+        const brandName = d.brand.toLowerCase();
+        if (colors.length && !brand.length) {
+          return colors?.includes(colorName);
+        }
+        if (brand.length && !colors.length) {
+          return brand?.includes(brandName);
+        }
+        if (brand.length && colors.length) {
+          return colors?.includes(colorName) && brand?.includes(brandName);
+        }
+        return initialData;
+      });
+      return newState;
+    };
+
+    const newState = handleFilter(store.data, store.color, store.brand);
+    setData(newState);
+  }, [store]);
+
   const values = {
-    data: store.data,
+    data,
     search: store.search,
     sort: store.sort,
     activePage: store.activePage,

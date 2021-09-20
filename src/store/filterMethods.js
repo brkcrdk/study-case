@@ -30,7 +30,7 @@ export const handleSortChange = (state, action, initialData) => {
     return { ...sharedProps, data: ASC };
   }
   if (action.payload === "DESC") {
-    const DESC = cloneData.sort((a, b) => a.name.localeCompare(b.name));
+    const DESC = cloneData.sort((a, b) => b.name.localeCompare(a.name));
     return { ...sharedProps, data: DESC };
   }
   if (action.payload === "priceASC") {
@@ -60,7 +60,6 @@ export const handleColorChange = (state, action) => {
 
 export const handleBrandChange = (state, action) => {
   const isExist = state.brand.includes(action.payload);
-
   let newBrand = [];
   if (isExist) {
     const filteredData = state.brand.filter((c) => c !== action.payload);
