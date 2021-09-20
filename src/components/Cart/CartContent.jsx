@@ -2,12 +2,17 @@ import styled, { css } from "styled-components";
 import { colors } from "theme";
 import CartItem from "./CartItem";
 
-function CartContent({ isHover }) {
+function CartContent({ isHover, cart }) {
   return (
     <CardContent isHover={isHover} data-testid="cart-content">
-      <CartItem />
-      <CartItem />
-      <CartItem />
+      {cart.map((cartItem) => (
+        <CartItem
+          key={cartItem.uuid}
+          uuid={cartItem.uuid}
+          name={cartItem.name}
+          image={cartItem.image}
+        />
+      ))}
     </CardContent>
   );
 }
@@ -19,6 +24,8 @@ const CardContent = styled.ul`
   right: 0;
   width: 100%;
   min-width: 360px;
+  max-height: 300px;
+  overflow: auto;
   background: #fff;
   padding: 21px;
   border: ${`1px solid ${colors.lightGray}`};
