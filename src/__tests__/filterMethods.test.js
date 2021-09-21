@@ -3,6 +3,7 @@ import {
   handleColorChange,
   handleSearch,
   handleSortChange,
+  filterProducts,
 } from "store/filterMethods";
 
 const initialData = [
@@ -26,7 +27,7 @@ const initialData = [
   },
   {
     name: "Note 12",
-    brand: "Samsung",
+    brand: "Huawei",
     color: "Beyaz",
     realPrice: 700,
   },
@@ -46,9 +47,6 @@ const onSearch = (payload) =>
 
 const onSortChange = (payload) =>
   handleSortChange(dummyData.state, { payload }, initialData);
-
-const onColorChange = (payload) =>
-  handleColorChange(dummyData.state, { payload });
 
 describe("Find counts testleri", () => {
   it("handleSearch 2 karakter girdikten sonra çalışmalı ve filtreleme resetlenmeli", () => {
@@ -141,5 +139,97 @@ describe("Find counts testleri", () => {
     const result3 = handleBrandChange(result2, { payload: "apple" });
     expect(result3.brand).not.toContain("apple");
     expect(result3.brand).toContain("huawei");
+  });
+
+  it("filterProducts; herhangi bir filtre girilmezse tüm ürünleri verir", () => {
+    const result = filterProducts(initialData, [], [], initialData);
+    expect(result).toEqual(initialData);
+    expect(result).toHaveLength(5);
+  });
+
+  it("filterProducts; sadece renk verilince renge göre arama yapar", () => {
+    const expectedBrands = [];
+    const expectedColors = ["sarı", "kırmızı"];
+    const expectedColors2 = ["kırmızı"];
+    const result = filterProducts(
+      initialData,
+      expectedColors,
+      expectedBrands,
+      initialData
+    );
+    expect(result).toHaveLength(2);
+    const result2 = filterProducts(
+      initialData,
+      expectedColors2,
+      expectedBrands,
+      initialData
+    );
+    expect(result2).toHaveLength(1);
+  });
+
+  it("filterProducts; sadece marka verilince markaya göre arama yapar", () => {
+    const expectedColors = [];
+    const expectedBrands = ["apple"];
+    const expectedBrands2 = ["apple", "huawei"];
+
+    const result = filterProducts(
+      initialData,
+      expectedColors,
+      expectedBrands,
+      initialData
+    );
+    expect(result).toHaveLength(2);
+
+    const result2 = filterProducts(
+      initialData,
+      expectedColors,
+      expectedBrands2,
+      initialData
+    );
+    expect(result2).toHaveLength(4);
+  });
+
+  it("filterProducts; her iki türde de filtre girilirse ona göre arama yapar", () => {
+    const expectedColors = ["siyah"];
+    const expectedColors2 = ["lacivert", "kırmızı", "siyah"];
+    const expectedBrands = ["apple"];
+    const expectedBrands2 = ["apple", "xiaomi"];
+
+    const result = filterProducts(
+      initialData,
+      expectedColors,
+      expectedBrands,
+      initialData
+    );
+    expect(result).toHaveLength(1);
+    const result2 = filterProducts(
+      initialData,
+      expectedColors2,
+      expectedBrands2,
+      initialData
+    );
+    expect(result2).toHaveLength(3);
+  });
+
+  it("filterProducts; eğer bir arama yapılmışsa filtreler arama sonucunda gelen data göre çalışır", () => {
+    const expectedColors = ["lacivert", "kırmızı", "siyah"];
+    const expectedBrands = ["apple", "xiaomi"];
+    const search = onSearch("note");
+    const search2 = onSearch("xiao");
+
+    const result = filterProducts(
+      search.data,
+      expectedColors,
+      expectedBrands,
+      initialData
+    );
+    expect(result).toHaveLength(0);
+    const result2 = filterProducts(
+      search2.data,
+      expectedColors,
+      expectedBrands,
+      initialData
+    );
+    expect(result2).toHaveLength(1);
   });
 });
