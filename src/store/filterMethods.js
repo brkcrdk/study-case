@@ -74,3 +74,20 @@ export const handleBrandChange = (state, action) => {
 
   return { ...state, brand: newBrand, activePage: 1 };
 };
+
+export const filterProducts = (data, color, brand, initialData) => {
+  return data.filter((product) => {
+    const colorName = product.color.toLowerCase();
+    const brandName = product.brand.toLowerCase();
+    if (color.length && !brand.length) {
+      return color?.includes(colorName);
+    }
+    if (brand.length && !color.length) {
+      return brand?.includes(brandName);
+    }
+    if (brand.length && color.length) {
+      return color?.includes(colorName) && brand?.includes(brandName);
+    }
+    return initialData;
+  });
+};
