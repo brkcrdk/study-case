@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 import {
   Header,
@@ -8,10 +9,19 @@ import {
   Pagination,
 } from "components";
 import { usePagination } from "hooks";
+import initialData from "./data.json";
 
 function App() {
   const { data, activePage, pageCount, handleNext, handlePrev, handleGoTo } =
     usePagination();
+
+  useEffect(() => {
+    const isExist = localStorage.getItem("initialData");
+    if (!isExist) {
+      localStorage.setItem("initialData", JSON.stringify(initialData));
+    }
+  }, []);
+
   return (
     <main data-testid="app">
       <Header />
