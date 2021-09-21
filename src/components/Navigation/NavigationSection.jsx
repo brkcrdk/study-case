@@ -18,19 +18,17 @@ function NavigationSection({ title, filterType, options = [] }) {
       <SectionTitle>{title}</SectionTitle>
       <NavContainer>
         {options.map((option) => (
-          <li
-            key={option.value}
-            className={isActive(option.value)}
-            onClick={() =>
-              onFilterChange({
-                value: option.value,
-                filterType,
-              })
-            }
-          >
-            <a>
+          <li key={option.value} className={isActive(option.value)}>
+            <button
+              onClick={() =>
+                onFilterChange({
+                  value: option.value,
+                  filterType,
+                })
+              }
+            >
               {option.label} {option.count && ` (${option.count})`}
-            </a>
+            </button>
           </li>
         ))}
       </NavContainer>
@@ -57,11 +55,14 @@ const NavContainer = styled.ul`
     color: ${colors.navText};
     margin: 6px 0;
     &.active {
-      font-weight: 500;
-      color: ${colors.mainOrange};
+      button {
+        font-weight: 800;
+        color: ${colors.mainOrange};
+      }
     }
-    a {
+    button {
       &:hover {
+        cursor: pointer;
         color: ${colors.mainOrange};
       }
     }
