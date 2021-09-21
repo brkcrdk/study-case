@@ -1,5 +1,5 @@
 ### Uygulamayı localde incelemek ve çalıştırmak için:
- 
+
 Repoyu cloneladıktan ve reponun olduğu klasöre gidip, o path içinde terminal açtıktan sonra;
 
 - Uygulamayı kurmak için: `npm install`,
@@ -8,10 +8,9 @@ Repoyu cloneladıktan ve reponun olduğu klasöre gidip, o path içinde terminal
 
 ##### Kurulum için gerekli olan paketler
 
- - [Node](https://nodejs.org/en/)
+- [Node](https://nodejs.org/en/)
 
-
-### Uygulamayı Docker ile çalıştırmak için
+### Uygulamayı Docker ile çalıştırmak için:
 
 Repoyu cloneladıktan ve reponun olduğu klasöre gidip, o path içinde terminal açtıktan sonra;
 
@@ -25,7 +24,7 @@ NOT: `studycase` projeyi build alırken dockerda tutulacak isim olduğu için is
 
 ##### Kurulum için gerekli olan paketler
 
- - [Node](https://nodejs.org/en/)
- - [Docker](https://docs.docker.com/get-started/)
+- [Node](https://nodejs.org/en/)
+- [Docker](https://docs.docker.com/get-started/)
 
-> :warning: Docker ile çalışmanız tamamlandığında çalışmayı durdurmak için `docker rm -f studycase`, docker imageını silmek için de `docker rmi -f studycase` komutlarını çalıştırınız. 
+> :warning: Docker ile çalışmanız tamamlandığında çalışmayı durdurmak için `docker rm -f studycase`, docker imageını silmek için de `docker rmi -f studycase` komutlarını çalıştırınız.
