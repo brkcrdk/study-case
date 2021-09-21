@@ -9,7 +9,7 @@ function Modal() {
   const { content, header, closeModal, isModalOpen } = useContext(ModalContext);
 
   return (
-    <StyledModal isModalOpen={isModalOpen}>
+    <StyledModal isModalOpen={isModalOpen} data-testid="modal-container">
       <ModalContainer isModalOpen={isModalOpen} closeModal={closeModal}>
         <ModalHeader header={header} closeModal={closeModal} />
         <Content>{content}</Content>
