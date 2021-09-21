@@ -4,7 +4,7 @@ import CartItem from "./CartItem";
 
 function CartContent({ isHover, cart }) {
   return (
-    <CardContent isHover={isHover} data-testid="cart-content">
+    <CartContentWrapper isHover={isHover} data-testid="cart-content">
       {cart.map((cartItem) => (
         <CartItem
           key={cartItem.uuid}
@@ -13,12 +13,12 @@ function CartContent({ isHover, cart }) {
           image={cartItem.image}
         />
       ))}
-    </CardContent>
+    </CartContentWrapper>
   );
 }
 export default CartContent;
 
-const CardContent = styled.ul`
+const CartContentWrapper = styled.ul`
   position: absolute;
   top: 47px;
   right: 0;
