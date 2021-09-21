@@ -1,11 +1,16 @@
-# Uygulamanın docker buildini almak için terminalde şu kodu yazınız:
+#### Uygulamanın docker buildini alıp localde incelemek için terminalde şu kodları sırasıyla çalıştırın:
 
-docker build - uygulamaadı .
+<code>docker build - studycase .</code>
+<br/>
+<code>docker run --name studycase -d -p 3000:3000 studycase</code>
+<br/>
+<code>docker run -it studycase</code>
 
-# Buildini aldığımız uygulamayı çalıştırmka için:
+#### Bu komutları çalıştırdıktan sonra browserınızda <link>http://localhost:3000</link> adresine gidip uygulamayı deneyimleyebilirsiniz.
 
-docker run --name buildadı -d -p 3000:3000 uygulamaadı
+### Kurulum için gerekli olan paketler
+<ol>
+  <li>[Node](https://nodejs.org/en/)</li>
+  <li>[Docker](https://docs.docker.com/get-started/)</li>
+</ol>
 
-# Buildi localde çalıştırmak içinse:
-
-docker run -it uygulamaadı
