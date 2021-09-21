@@ -27,3 +27,6 @@ NOT: `studycase` projeyi build alırken dockerda tutulacak isim olduğu için is
 
  - [Node](https://nodejs.org/en/)
  - [Docker](https://docs.docker.com/get-started/)
+
+> :warning:    
+> Docker ile çalışmanız tamamlandığında çalışmayı durdurmak için `docker rm -f studycase`, docker imageını silmek için de `docker rmi -f studycase` komutlarını çalıştırınız. 
