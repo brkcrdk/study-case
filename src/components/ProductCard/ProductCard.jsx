@@ -12,6 +12,7 @@ function ProductCard({ productInfo }) {
 
   return (
     <ProductCardWrapper
+      data-testid="product-card"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       isHovered={isHovered}
@@ -20,7 +21,11 @@ function ProductCard({ productInfo }) {
       <ProductDetails>
         <ProductTitle>{name}</ProductTitle>
         {isHovered ? (
-          <BuyButton disabled={isExist} onClick={() => addToCart(productInfo)}>
+          <BuyButton
+            data-testid="buy-button"
+            disabled={isExist}
+            onClick={() => addToCart(productInfo)}
+          >
             {isExist ? "Bu ürünü sepete ekleyemezsiniz" : "Sepete Ekle"}
           </BuyButton>
         ) : (

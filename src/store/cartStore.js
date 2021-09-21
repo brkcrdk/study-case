@@ -25,6 +25,7 @@ const CartProvider = ({ children }) => {
       return localStorage.setItem("cart", JSON.stringify(storageData));
     }
   };
+
   const removeFromCart = (uuid) => {
     const filteredData = cart.filter((cartItem) => cartItem.uuid !== uuid);
     const sortedData = sortStorage(filteredData);

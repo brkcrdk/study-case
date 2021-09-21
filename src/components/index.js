@@ -9,3 +9,4 @@ export { default as Navigation } from "./Navigation/Navigation";
 export { default as ProductContainer } from "./ProductContainer";
 export { default as Pagination } from "./Pagination";
 export { default as Modal } from "./Modal/Modal";
+export { default as ProductCard } from "./ProductCard/ProductCard";
