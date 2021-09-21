@@ -5,7 +5,7 @@ import { CartContext } from "store";
 import CartContent from "./CartContent";
 import ItemCount from "./ItemCount";
 
-function Cart({ ...props }) {
+function Cart(props) {
   const [isHover, setIsHover] = useState(false);
   const { cart } = useContext(CartContext);
 
