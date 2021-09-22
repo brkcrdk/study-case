@@ -16,9 +16,9 @@ function Cart(props) {
       onMouseLeave={() => setIsHover(false)}
       {...props}
     >
-      <CartText isHover={isHover}>Sepetim</CartText>
-      <ItemCount count={cart.length} />
-      <CartContent isHover={isHover} cart={cart} />
+      <CartText isHover={isHover && cart.length}>Sepetim</CartText>
+      {!!cart.length && <ItemCount count={cart.length} />}
+      <CartContent isHover={isHover && cart.length} cart={cart} />
     </CartWrapper>
   );
 }
