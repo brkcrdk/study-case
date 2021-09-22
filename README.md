@@ -21,12 +21,12 @@ Repoyu cloneladıktan ve reponun olduğu klasöre gidip, o path içinde terminal
 NOT: `studycase` projeyi build alırken dockerda tutulacak isim olduğu için isteğe göre verebilirsiniz.
 
 ##### Docker komut açıklamaları:
--it: interactive mode. Docker interactive mode'da çalışırılabilir.
---name: Container oluşturulurken deamon, containerımıza random bir isim vermektedir. Bunun yerine --name tagini kullanarak 
-kendi seçtiğimiz bir adı kullanabiliriz.
--d: detached mode. Docker imageının arkaplanda çalışmasını sağlamış oluruz bu şekilde terminalde container ile ilgili herhangi bir çıktı
-almamış oluruz.
--p: publish. Docker imageının çalışacağı portu paylaşırız.
+- -it: interactive mode. Docker interactive mode'da çalışırılabilir.
+- --name: Container oluşturulurken deamon, containerımıza random bir isim vermektedir. Bunun yerine --name tagini kullanarak 
+  kendi seçtiğimiz bir adı kullanabiliriz.
+- -d: detached mode. Docker imageının arkaplanda çalışmasını sağlamış oluruz bu şekilde terminalde container ile ilgili herhangi bir çıktı
+  almamış oluruz.
+- -p: publish. Docker imageının çalışacağı portu paylaşırız.
 
 #### Bu komutları çalıştırdıktan sonra browserınızda <link>http://localhost:3000</link> adresine gidip uygulamayı deneyimleyebilirsiniz.
 
